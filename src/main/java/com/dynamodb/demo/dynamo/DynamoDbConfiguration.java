@@ -21,7 +21,7 @@ public class DynamoDbConfiguration {
     private AmazonDynamoDB buildAmazonDynamoDb() {
         return AmazonDynamoDBClientBuilder.standard()
                 .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("dynamodb.eu-west-1.amazonaws.com","eu-west-1"))
-                .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials("AKIATDYWZMFS7FGPR6EH","Ee0tpWODXDnfvPEOL/EC6zyEBXFzwskRc0j8IENv")))
+                .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials("ACCESS_KEY","SECRET_KEY")))
                 .build();
     }
 }
