@@ -2,14 +2,17 @@ package com.dynamodb.demo.dynamo.controller;
 
 import com.dynamodb.demo.dynamo.entity.Employee;
 import com.dynamodb.demo.dynamo.repository.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class EmployeeController {
 
-    @Autowired
-    private EmployeeRepository employeeRepository;
+
+    private final EmployeeRepository employeeRepository;
+
+    public EmployeeController(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
 
     @PostMapping("/employee")
     public Employee saveEmployee(@RequestBody Employee employee){
